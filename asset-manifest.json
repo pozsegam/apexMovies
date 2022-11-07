@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/pozsegam/apexMovies/static/css/main.d82ba1ee.css",
-    "main.js": "/pozsegam/apexMovies/static/js/main.613671b3.js",
-    "index.html": "/pozsegam/apexMovies/index.html",
-    "main.d82ba1ee.css.map": "/pozsegam/apexMovies/static/css/main.d82ba1ee.css.map",
-    "main.613671b3.js.map": "/pozsegam/apexMovies/static/js/main.613671b3.js.map"
+    "main.css": "/apexMovies/static/css/main.d82ba1ee.css",
+    "main.js": "/apexMovies/static/js/main.613671b3.js",
+    "index.html": "/apexMovies/index.html",
+    "main.d82ba1ee.css.map": "/apexMovies/static/css/main.d82ba1ee.css.map",
+    "main.613671b3.js.map": "/apexMovies/static/js/main.613671b3.js.map"
   },
   "entrypoints": [
     "static/css/main.d82ba1ee.css",
