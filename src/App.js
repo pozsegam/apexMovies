@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import { ROUTES } from './constants/routes';
+import DiscoverMovies from './pages/DiscoverMovies/DiscoverMovies';
+import MovieDetail from './pages/MovieDetail/MovieDetail';
+import PopularMovies from './pages/PopularMovies/PopularMovies';
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path={`${ROUTES.POPULAR}`} element={<PopularMovies />} />
+          <Route path={`${ROUTES.DISCOVER}`} element={<DiscoverMovies />} />
+          <Route
+            path={`${ROUTES.MOVIE_DETAIL}/:name`}
+            element={<MovieDetail />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 
