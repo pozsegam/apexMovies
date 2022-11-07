@@ -8,11 +8,14 @@ import Spinner from './Spinner';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [value, setValue] = useState('');
   const movies = useSearchMovie(searchTerm) || [];
   const navigate = useNavigate();
 
   return (
     <Autocomplete
+      inputvalue={searchTerm}
+      value={value}
       loading={searchTerm === '' ? false : true}
       loadingText={<Spinner />}
       onChange={(event, value) => {
