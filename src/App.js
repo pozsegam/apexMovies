@@ -2,7 +2,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { ROUTES } from './constants/routes';
+import { ROUTES } from './navigation/routes';
 import DiscoverMovies from './pages/DiscoverMovies/DiscoverMovies';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
 import PopularMovies from './pages/PopularMovies/PopularMovies';

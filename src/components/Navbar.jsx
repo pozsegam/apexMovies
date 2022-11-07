@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '../constants/routes';
+import { ROUTES } from '../navigation/routes';
 import { ApexLogo } from './ApexLogo';
 import SearchBar from './SearchBar';
 const Navbar = () => {

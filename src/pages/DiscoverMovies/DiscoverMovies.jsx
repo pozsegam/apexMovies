@@ -8,8 +8,8 @@ import {
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../../components/Spinner';
-import { ROUTES } from '../../constants/routes';
 import { useDiscoverMovies } from '../../hooks/useDiscoverMovies';
+import { ROUTES } from '../../navigation/routes';
 
 const DiscoverMovies = () => {
   const movies = useDiscoverMovies() || [];

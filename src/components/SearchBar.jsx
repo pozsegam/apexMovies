@@ -2,8 +2,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Autocomplete, autocompleteClasses, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '../constants/routes';
 import { useSearchMovie } from '../hooks/useSearchMovie';
+import { ROUTES } from '../navigation/routes';
 import Spinner from './Spinner';
 
 const SearchBar = () => {
