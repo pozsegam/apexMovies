@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/apexMovies/static/css/main.d82ba1ee.css",
-    "main.js": "/apexMovies/static/js/main.9a90fa1e.js",
+    "main.js": "/apexMovies/static/js/main.d1225ee0.js",
     "index.html": "/apexMovies/index.html",
     "main.d82ba1ee.css.map": "/apexMovies/static/css/main.d82ba1ee.css.map",
-    "main.9a90fa1e.js.map": "/apexMovies/static/js/main.9a90fa1e.js.map"
+    "main.d1225ee0.js.map": "/apexMovies/static/js/main.d1225ee0.js.map"
   },
   "entrypoints": [
     "static/css/main.d82ba1ee.css",
-    "static/js/main.9a90fa1e.js"
+    "static/js/main.d1225ee0.js"
   ]
 }
