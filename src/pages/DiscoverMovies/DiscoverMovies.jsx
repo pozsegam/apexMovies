@@ -16,9 +16,7 @@ const DiscoverMovies = () => {
   const navigate = useNavigate();
 
   return movies.isLoading ? (
-    <Box sx={{ m: 4 }}>
-      <Spinner />
-    </Box>
+    <Spinner />
   ) : (
     <Grid container gap={5} padding={5}>
       {movies.data.map(item => {
