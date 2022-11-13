@@ -18,7 +18,7 @@ function App() {
           <Route path={`${ROUTES.POPULAR}`} element={<PopularMovies />} />
           <Route path={`${ROUTES.DISCOVER}`} element={<DiscoverMovies />} />
           <Route
-            path={`${ROUTES.MOVIE_DETAIL}/:name`}
+            path={`${ROUTES.MOVIE_DETAIL}/:id/:name`}
             element={<MovieDetail />}
           />
         </Routes>

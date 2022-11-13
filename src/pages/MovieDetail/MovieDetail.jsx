@@ -6,16 +6,17 @@ import { useMovie } from '../../hooks/useMovie';
 import { useSearchWiki } from '../../hooks/useSearchWiki';
 
 const MovieDetail = () => {
-  const { name } = useParams();
+  const { id, name } = useParams();
+  const movie = useMovie(id) || {};
   const wikiContent = useSearchWiki(name) || [];
-  const movie = useMovie(550) || {};
 
-  return wikiContent.isLoading || movie.isLoading ? (
+  return movie.isLoading || wikiContent.isLoading ? (
     <Spinner />
   ) : (
     <Box className="movie-detail-container">
       <Typography variant="h3">{wikiContent.data.title}</Typography>
       <img src={IMG_API + movie.poster?.file} alt="" />
+      <Typography variant="p">{movie.overview}</Typography>
       <Typography className="movie-detail-body" variant="p">
         {wikiContent.data.extract}
       </Typography>

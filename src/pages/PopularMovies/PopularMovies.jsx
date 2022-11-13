@@ -23,7 +23,9 @@ const PopularMovies = () => {
         return (
           <Card
             className="card"
-            onClick={() => navigate(`${ROUTES.MOVIE_DETAIL}/${item.name}`)}
+            onClick={() =>
+              navigate(`${ROUTES.MOVIE_DETAIL}/${item.id}/${item.name}`)
+            }
             key={item.id}>
             <CardMedia
               component="img"
