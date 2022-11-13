@@ -1,6 +1,6 @@
 export const BASE_URL = 'https://tmdb.sandbox.zoosh.ie/dev/graphql';
 export const WIKI_BASE_URL = 'https://en.wikipedia.org/w/api.php?';
-
+export const IMG_API = 'https://image.tmdb.org/t/p/w1280';
 export const QUERY = {
   POPULAR_MOVIES: `query fetchPopular {
         movies: popularMovies {
@@ -50,6 +50,39 @@ export const QUERY = {
         role {
           ... on Cast {
             character
+          }
+        }
+      }
+    }
+  }`,
+  GET_MOVIE: `
+  query getMovie($id: ID!) {
+    movie(id:$id ) {
+      id
+      poster{file}
+      backdrop{file}
+      name
+      overview
+      cast(limit: 5) {
+        id
+        person {
+          name
+        }
+        role {
+          ... on Cast {
+            character
+          }
+        }
+      }
+      crew(limit: 5) {
+        id
+        person {
+          name
+        }
+        role {
+          ... on Crew {
+            job
+            department
           }
         }
       }

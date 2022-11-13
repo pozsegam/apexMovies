@@ -23,3 +23,16 @@ export const searchMovies = async query => {
     },
   });
 };
+
+export const getMovie = async id => {
+  return axios({
+    url: `${BASE_URL}`,
+    method: 'post',
+    data: {
+      query: QUERY.GET_MOVIE,
+      variables: {
+        id: id,
+      },
+    },
+  });
+};
