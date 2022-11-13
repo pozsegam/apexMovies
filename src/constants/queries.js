@@ -1,6 +1,6 @@
 export const BASE_URL = 'https://tmdb.sandbox.zoosh.ie/dev/graphql';
 export const WIKI_BASE_URL = 'https://en.wikipedia.org/w/api.php?';
-export const IMG_API = 'https://image.tmdb.org/t/p/w1280';
+export const IMG_API_URL = 'https://image.tmdb.org/t/p/w1280';
 export const QUERY = {
   POPULAR_MOVIES: `query fetchPopular {
         movies: popularMovies {

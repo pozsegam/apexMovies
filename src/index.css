@@ -53,11 +53,36 @@ img {
   text-align: center;
 }
 
-.movie-detail-container {
-  margin: 0 auto;
-  width: 50rem;
-  text-align: center;
+.wrapper {
+  padding: 2rem;
 }
-.movie-detail-body {
-  text-align: center;
+
+.movie-detail-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  color: black;
+  text-align: left;
+}
+
+.poster {
+  max-width: 40vw;
+  max-height: 40vw;
+  margin-right: 5rem;
+}
+
+.movie-title {
+  margin: 0;
+  width: 40vw;
+}
+
+.movie-overview {
+  margin-top: 1rem;
+  width: 40vw;
+}
+
+.wiki-extract {
+  width: 40vw;
 }

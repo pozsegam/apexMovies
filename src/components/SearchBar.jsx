@@ -19,7 +19,7 @@ const SearchBar = () => {
       loading={searchTerm === '' ? false : true}
       loadingText={<Spinner />}
       onChange={(event, value) => {
-        navigate(`${ROUTES.MOVIE_DETAIL}/${value.name}`);
+        navigate(`${ROUTES.MOVIE_DETAIL}/${value.id}/${value.name}`);
       }}
       popupIcon={<SearchIcon />}
       getOptionLabel={option => option.name || ''}
