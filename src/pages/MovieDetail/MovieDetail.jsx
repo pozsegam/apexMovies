@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Link } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Spinner from '../../components/Spinner';
 import { IMG_API_URL } from '../../constants/queries';
@@ -10,7 +10,7 @@ const MovieDetail = () => {
   const movie = useMovie(id) || {};
   const wikiContent = useSearchWiki(name) || [];
   const POSTER = IMG_API_URL + movie.poster?.file;
-  console.log(movie);
+
   return movie.isLoading || wikiContent.isLoading ? (
     <Spinner />
   ) : (

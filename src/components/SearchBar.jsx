@@ -1,42 +1,47 @@
+import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
-import { Autocomplete, autocompleteClasses, TextField } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import InputBase from '@mui/material/InputBase';
+import Paper from '@mui/material/Paper';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSearchMovie } from '../hooks/useSearchMovie';
 import { ROUTES } from '../navigation/routes';
-import Spinner from './Spinner';
-
-const SearchBar = () => {
+export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [value, setValue] = useState('');
-  const movies = useSearchMovie(searchTerm) || [];
   const navigate = useNavigate();
+  const resetSearchTerm = () => {
+    setSearchTerm('');
+  };
+
+  const goSeeResults = name => {
+    if (name === '') {
+      return;
+    }
+
+    navigate(`${ROUTES.SEARCH_RESULTS}/${searchTerm}`);
+  };
 
   return (
-    <Autocomplete
-      inputvalue={searchTerm}
-      value={value}
-      loading={searchTerm === '' ? false : true}
-      loadingText={<Spinner />}
-      onChange={(event, value) => {
-        navigate(`${ROUTES.MOVIE_DETAIL}/${value.id}/${value.name}`);
-      }}
-      popupIcon={<SearchIcon />}
-      getOptionLabel={option => option.name || ''}
-      options={movies}
-      noOptionsText={'Couldnt find movie...'}
-      renderInput={movies => (
-        <TextField {...movies} label="Search for a Movie" />
-      )}
-      onInputChange={e => setSearchTerm(e.target.value)}
-      sx={{
-        width: 300,
-        [`& .${autocompleteClasses.popupIndicator}`]: {
-          transform: 'none',
-        },
-        background: 'white',
-      }}></Autocomplete>
+    <Paper
+      component="form"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}>
+      <InputBase
+        value={searchTerm}
+        sx={{ ml: 1, flex: 1 }}
+        placeholder="Search Movies"
+        onChange={e => setSearchTerm(e.target.value)}
+      />
+      <IconButton
+        onClick={() => goSeeResults(searchTerm)}
+        type="button"
+        sx={{ p: '10px' }}>
+        <SearchIcon />
+      </IconButton>
+      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      <IconButton onClick={resetSearchTerm} color="primary" sx={{ p: '10px' }}>
+        <ClearIcon />
+      </IconButton>
+    </Paper>
   );
-};
-
-export default SearchBar;
+}

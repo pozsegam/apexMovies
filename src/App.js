@@ -6,6 +6,7 @@ import { ROUTES } from './navigation/routes';
 import DiscoverMovies from './pages/DiscoverMovies/DiscoverMovies';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
 import PopularMovies from './pages/PopularMovies/PopularMovies';
+import SearchResults from './pages/SearchResults/SearchResults';
 
 function App() {
   const queryClient = new QueryClient();
@@ -20,6 +21,10 @@ function App() {
           <Route
             path={`${ROUTES.MOVIE_DETAIL}/:id/:name`}
             element={<MovieDetail />}
+          />
+          <Route
+            path={`${ROUTES.SEARCH_RESULTS}/:name`}
+            element={<SearchResults />}
           />
         </Routes>
       </BrowserRouter>

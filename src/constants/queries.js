@@ -42,6 +42,7 @@ export const QUERY = {
       name
       overview
       releaseDate
+      poster{file}
       cast {
         id
         person {
