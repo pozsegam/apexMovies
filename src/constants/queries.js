@@ -63,6 +63,7 @@ export const QUERY = {
       poster{file}
       backdrop{file}
       name
+      similar{name,id,poster{file}}
       overview
       cast(limit: 5) {
         id
