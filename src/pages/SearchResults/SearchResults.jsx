@@ -18,8 +18,9 @@ const SearchResults = () => {
       {movies.data?.searchMovies.map(item => {
         return (
           <MovieCard
-            navigation={() => () =>
-              navigate(`${ROUTES.MOVIE_DETAIL}/${item.id}/${item.name}`)}
+            navigation={() =>
+              navigate(`${ROUTES.MOVIE_DETAIL}/${item.id}/${item.name}`)
+            }
             id={item.id}
             poster={IMG_API_URL + item.poster?.file}
             name={item.name}
