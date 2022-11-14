@@ -39,7 +39,6 @@ const SearchResults = () => {
                 id={item.id}
                 poster={IMG_API_URL + item.poster?.file}
                 name={item.name}
-                overview={item.overview}
               />
             </SwiperSlide>
           );
