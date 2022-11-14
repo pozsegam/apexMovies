@@ -4,7 +4,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Paper from '@mui/material/Paper';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../navigation/routes';
 
@@ -16,7 +16,7 @@ export default function SearchBar() {
     setSearchTerm('');
   };
 
-  const goSeeResults = name => {
+  const handleSubmit = name => {
     if (name === '') {
       return;
     }
@@ -28,15 +28,13 @@ export default function SearchBar() {
       component="form"
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}>
       <InputBase
+        onKeyPress={e => e.key === 'Enter' && handleSubmit(searchTerm)}
         value={searchTerm}
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search Movies"
         onChange={e => setSearchTerm(e.target.value)}
       />
-      <IconButton
-        onClick={() => goSeeResults(searchTerm)}
-        type="submit"
-        sx={{ p: '10px' }}>
+      <IconButton onClick={() => handleSubmit(searchTerm)} sx={{ p: '10px' }}>
         <SearchIcon />
       </IconButton>
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
