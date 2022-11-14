@@ -20,6 +20,7 @@ const PopularMovies = () => {
               navigate(`${ROUTES.MOVIE_DETAIL}/${item.id}/${item.name}`)
             }
             id={item.id}
+            key={item.id}
             poster={item.img.url}
             name={item.name}
             overview={item.overview}

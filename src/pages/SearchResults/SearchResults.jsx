@@ -36,6 +36,7 @@ const SearchResults = () => {
                 navigation={() =>
                   navigate(`${ROUTES.MOVIE_DETAIL}/${item.id}/${item.name}`)
                 }
+                key={item.id}
                 id={item.id}
                 poster={IMG_API_URL + item.poster?.file}
                 name={item.name}

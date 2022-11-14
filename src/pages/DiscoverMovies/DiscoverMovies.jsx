@@ -20,6 +20,7 @@ const DiscoverMovies = () => {
               navigate(`${ROUTES.MOVIE_DETAIL}/${item.id}/${item.name}`)
             }
             id={item.id}
+            key={item.id}
             poster={item.poster?.large}
             name={item.name}
             overview={item.overview}

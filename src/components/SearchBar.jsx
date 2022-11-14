@@ -4,12 +4,14 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Paper from '@mui/material/Paper';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../navigation/routes';
+
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+
   const resetSearchTerm = () => {
     setSearchTerm('');
   };
@@ -18,7 +20,6 @@ export default function SearchBar() {
     if (name === '') {
       return;
     }
-
     navigate(`${ROUTES.SEARCH_RESULTS}/${searchTerm}`);
   };
 
@@ -34,7 +35,7 @@ export default function SearchBar() {
       />
       <IconButton
         onClick={() => goSeeResults(searchTerm)}
-        type="button"
+        type="submit"
         sx={{ p: '10px' }}>
         <SearchIcon />
       </IconButton>
