@@ -21,7 +21,7 @@ const MovieDetail = () => {
           <p className="movie-overview">{movie.data?.overview}</p>
           <h3>Wikipedia Content</h3>
           <p className="wiki-extract">
-            {`${wikiContent.data.extract.substring(0, 300)}...`}
+            {`${wikiContent.data.extract.substring(0, 100)}...`}
           </p>
           <Link target="_blank" href={wikiContent.data.fullurl}>
             Go to Wikipedia page
