@@ -8,7 +8,7 @@
  npm i
 ```
 
-- now you are free to start the development server with:
+- now you can start the development server with:
 
 ```console
  npm start
